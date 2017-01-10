@@ -18,7 +18,7 @@ file.reverseString = function (word) {
 
 file.words = function (input) {
   var wordsArray = [];
-  wordsArray = input.split(/\ +/);
+  wordsArray = input.replace('\t',' ').replace('\n',' ').split(/\ +/);;
   var countArray = [];
   var output = {};
   
