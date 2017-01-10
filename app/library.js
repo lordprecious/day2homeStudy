@@ -16,5 +16,27 @@ file.reverseString = function (word) {
     return reversedWord;
 }
 
+file.words = function (input) {
+  var wordsArray = [];
+  wordsArray = input.split(" ");
+  var countArray = [];
+  var output = {};
+  
+  for(var i = 0; i < wordsArray.length; i++) {
+    var currentWord = wordsArray[i];
+    if(typeof(countArray[currentWord]) === 'undefined') {
+      countArray[currentWord] = 1;
+    }
+    else{
+      countArray[currentWord] += 1;
+    }
+  }
+  for(var item in countArray){
+    output[item] = countArray[item];
+    //console.log(item + ': ' + countArray[item]);
+  }
+  return output;
+}
+
 
 module.exports = file;
